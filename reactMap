@@ -1,0 +1,32 @@
+
+import { GoogleLogin, GoogleAuth, GoogleSignin } from 'react-google-login';
+const App = () => {
+  const responseGoogle = async (response) => {
+    // const c = await GoogleAuth.signIn()
+    // console.log({c})
+    // GoogleAuth.grantOfflineAccess(options)
+    console.log(response);
+  }
+  // https://www.googleapis.com/auth/userinfo.profile	
+  //See your personal info, including any personal info you've made publicly available
+  
+  //openid	
+  //Associate you with your personal info on Google
+  
+  // https://www.googleapis.com/auth/userinfo.email	
+  //View your email address
+  return (
+    <>
+  <GoogleLogin
+    clientId="262409831141-99gr4kn57bfe3ola0vbls8rlv2vfvv24.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    scope={'openid', 'profile', 'https://www.googleapis.com/auth/adsensehost'}
+    cookiePolicy={'single_host_origin'}
+  />
+    </>
+  )
+}
+
+export default App;
